@@ -7,12 +7,12 @@ include = ["beerlog/settings.toml"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-sqlmodel = "^0.0.6"
-fastapi = "^0.75.2"
-typer = "^0.4.1"
-rich = "^12.2.0"
-dynaconf = "^3.1.8"
-black = "^22.3.0"
+sqlmodel = "^0.0.14"
+fastapi = "^0.105.0"
+typer = "^0.9.0"
+rich = "^13.7.0"
+dynaconf = "^3.2.4"
+black = "^23.12.0"
 flake8 = "^4.0.1"
 
 [tool.poetry.dev-dependencies]
