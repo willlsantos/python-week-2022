@@ -24,8 +24,8 @@ jobs:
       - name: Install Poetry
         run: pip install --upgrade pip && pip install poetry
 
-      - name: Install httpx
-        run: pip install httpx
+      - name: Pip3 Install httpx
+        run: pip3 install httpx
 
       - name: Pip install flake8
         run: pip install flake8 install importlib-metadata==4.13.0
