@@ -33,6 +33,9 @@ jobs:
       - name: Poetry add requests
         run: poetry add requests
 
+      - name: Poetry add httpx
+        run: poetry add httpx
+
       - name: Poetry add uvicorn
         run: poetry add uvicorn
       
@@ -41,15 +44,9 @@ jobs:
       
       - name: Look for auto format errors
         run: poetry run black -l 79 --check --diff beerlog tests
-
-      - name: Teste maluco
-        run: pip install uvicorn
-
-      - name: Pip3 Install httpx
-        run: pip3 install httpx
       
       - name: Run tests
-        run: pip3 install httpx && poetry run pytest -v --junitxml=test-result.xml
+        run: poetry run pytest -v --junitxml=test-result.xml
       
       - name: publish junit results
         uses: EnricoMi/publish-unit-test-result-action@v1
