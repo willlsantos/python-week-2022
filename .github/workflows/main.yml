@@ -44,6 +44,9 @@ jobs:
       
       - name: Look for auto format errors
         run: poetry run black -l 79 --check --diff beerlog tests
+
+      - name: Teste maluco
+        run: pip install uvicorn
       
       - name: Run tests
         run: poetry run pytest -v --junitxml=test-result.xml
