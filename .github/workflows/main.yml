@@ -22,10 +22,22 @@ jobs:
         with:
           python-version: ${{matrix.python-version}}
       - name: Install Poetry
-        run: pip install --upgrade pip && pip install poetry && pip install httpx
+        run: pip install --upgrade pip && pip install poetry
+
+      - name: Install httpx
+        run: pip install httpx
+
+      - name: Pip install flake8
+        run: pip install flake8 install importlib-metadata==4.13.0
 
       - name: Install Project
         run: poetry install
+      
+      - name: Poetry add requests
+        run: poetry add requests
+
+      - name: Poetry add uvicorn
+        run: poetry add uvicorn
       
       - name: Look for style errors
         run: poetry run flake8 beerlog
