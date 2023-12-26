@@ -15,12 +15,16 @@ dynaconf = "^3.2.4"
 black = "^23.12.0"
 flake8 = "^4.0.1"
 uvicorn = "^0.25.0"
+requests = "^2.31.0"
 
 [tool.poetry.dev-dependencies]
 ipython = "^8.2.0"
 
 [tool.poetry.scripts]
 beerlog = "beerlog.__main__:main"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

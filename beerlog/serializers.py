@@ -1,7 +1,8 @@
-from pydantic import BaseModel, validator
 from datetime import datetime
+
 from fastapi import HTTPException, status
-from pydantic import field_validator
+from pydantic import BaseModel, field_validator, validator
+
 
 class BeerOut(BaseModel):
     id: int
@@ -10,8 +11,9 @@ class BeerOut(BaseModel):
     flavor: int
     image: int
     cost: int
-    rate: int 
+    rate: int
     date: datetime
+
 
 class BeerIn(BaseModel):
     name: str
@@ -19,12 +21,12 @@ class BeerIn(BaseModel):
     flavor: int
     image: int
     cost: int
-    
+
     @field_validator("image", "flavor", "cost")
     def validate_ratings(cls, v, field):
         if v < 1 or v > 10:
             raise HTTPException(
-                detail = f"{field.name} o valor deve ser entre 1 e 10",
-                status_code = status.HTTP_400_BAD_REQUEST
+                detail=f"{field.name} o valor deve ser entre 1 e 10",
+                status_code=status.HTTP_400_BAD_REQUEST,
             )
         return v
